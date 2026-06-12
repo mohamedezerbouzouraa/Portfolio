@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed Ezer Bouzouraa — Software & AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--sans:'Sora',sans-serif;--mono:'JetBrains Mono',monospace;--radius:14px;--radius-sm:8px;--transition:0.25s cubic-bezier(0.4,0,0.2,1)}
+[data-theme="dark"]{--bg:#080810;--bg-nav:rgba(6,6,18,0.82);--bg-card:rgba(14,14,28,0.82);--bg-card-hover:rgba(20,20,40,0.88);--border:rgba(255,255,255,0.06);--border-hover:rgba(255,255,255,0.14);--text:#eeeef5;--text-sub:#9898b0;--text-faint:#5a5a72;--accent:#7169ff;--accent-soft:rgba(113,105,255,0.18);--accent2:#00c9a0;--accent2-soft:rgba(0,201,160,0.12);--tag-bg:rgba(113,105,255,0.1);--tag-color:#a09cff;--tag-border:rgba(113,105,255,0.22);--tag-green-bg:rgba(0,201,160,0.08);--tag-green:rgba(0,201,160,0.9);--tag-green-border:rgba(0,201,160,0.2);--tag-pink-bg:rgba(255,95,130,0.08);--tag-pink:rgba(255,95,130,0.9);--tag-pink-border:rgba(255,95,130,0.2);--tag-amber-bg:rgba(255,177,60,0.08);--tag-amber:rgba(255,177,60,0.9);--tag-amber-border:rgba(255,177,60,0.2);--shadow:0 0 0 1px rgba(255,255,255,0.04),0 8px 32px rgba(0,0,0,0.5);--logo-glow:rgba(113,105,255,0.35)}
+[data-theme="light"]{--bg:#f4f4f8;--bg-nav:rgba(255,255,255,0.92);--bg-card:#ffffff;--bg-card-hover:#fafafc;--border:rgba(0,0,0,0.18);--border-hover:rgba(0,0,0,0.32);--text:#111112;--text-sub:#2c2c38;--text-faint:#6a6a80;--accent:#5b52f0;--accent-soft:rgba(91,82,240,0.08);--accent2:#00a882;--accent2-soft:rgba(0,168,130,0.06);--tag-bg:rgba(0,0,0,0.04);--tag-color:#3a3a5a;--tag-border:rgba(0,0,0,0.12);--tag-green-bg:rgba(0,168,130,0.06);--tag-green:#008f6e;--tag-green-border:rgba(0,168,130,0.2);--tag-pink-bg:rgba(230,60,100,0.05);--tag-pink:#cc3060;--tag-pink-border:rgba(230,60,100,0.15);--tag-amber-bg:rgba(200,130,0,0.05);--tag-amber:#b07000;--tag-amber-border:rgba(200,130,0,0.15);--shadow:0 0 0 1px rgba(0,0,0,0.06),0 4px 16px rgba(0,0,0,0.06);--logo-glow:rgba(0,0,0,0.1);--bg-pattern:repeating-linear-gradient(45deg,rgba(0,0,0,0.02) 0px,rgba(0,0,0,0.02) 2px,transparent 2px,transparent 12px)}
+[data-theme="light"] body{background-image:var(--bg-pattern);background-attachment:fixed}
+[data-theme="light"] #bokeh-canvas{display:none}
+[data-theme="dark"] #bokeh-canvas{display:block}
+html{scroll-behavior:smooth}
+body{background-color:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.7;overflow-x:hidden;transition:background-color 0.2s,color var(--transition)}
+#bokeh-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.content{position:relative;z-index:1}
+@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideRight{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:translateX(0)}}
+@keyframes glowPulse{0%,100%{text-shadow:none}50%{text-shadow:0 0 60px rgba(113,105,255,0.4),0 0 120px rgba(113,105,255,0.15)}}
+#hero h1,#hero .hero-location,#hero .hero-role,#hero .hero-desc,#hero .hero-actions{opacity:0}
+#hero.hero-ready h1{animation:fadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.15s forwards,glowPulse 3s ease-in-out 1.2s 2}
+#hero.hero-ready .hero-location{animation:slideRight 0.7s cubic-bezier(0.22,1,0.36,1) 0.55s forwards}
+#hero.hero-ready .hero-role{animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.72s forwards}
+#hero.hero-ready .hero-desc{animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 0.90s forwards}
+#hero.hero-ready .hero-actions{animation:fadeUp 0.7s cubic-bezier(0.22,1,0.36,1) 1.10s forwards}
+.reveal,.reveal-left,.reveal-stagger>*{transition:opacity 0.65s cubic-bezier(0.22,1,0.36,1),transform 0.65s cubic-bezier(0.22,1,0.36,1);will-change:transform,opacity}
+.reveal{opacity:0;transform:translateY(32px)}
+.reveal-left{opacity:0;transform:translateX(-30px)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-stagger>*{opacity:0;transform:translateY(24px)}
+.reveal-stagger.visible>*:nth-child(1){transition-delay:0.00s;opacity:1;transform:none}
+.reveal-stagger.visible>*:nth-child(2){transition-delay:0.08s;opacity:1;transform:none}
+.reveal-stagger.visible>*:nth-child(3){transition-delay:0.16s;opacity:1;transform:none}
+.reveal-stagger.visible>*:nth-child(4){transition-delay:0.24s;opacity:1;transform:none}
+.reveal-stagger.visible>*:nth-child(5){transition-delay:0.32s;opacity:1;transform:none}
+.reveal-stagger.visible>*:nth-child(6){transition-delay:0.40s;opacity:1;transform:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;justify-content:flex-end;padding:0 2.5rem;background:var(--bg-nav);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:background var(--transition)}
+.nav-right{display:flex;align-items:center;gap:2rem}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{color:var(--text-sub);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:0.02em;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.theme-btn{width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:transparent;color:var(--text-sub);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:all 0.2s}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.page{max-width:900px;margin:0 auto;padding:0 2rem}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:80px;padding-bottom:4rem}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1.5rem;padding:5px 12px;border:1px solid var(--accent2-soft);border-radius:20px;background:var(--accent2-soft);width:fit-content}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent2);display:inline-block}
+.name-row{display:inline-flex;align-items:center;gap:0.3em;line-height:1}
+.verified-badge{display:inline-flex;align-items:center;justify-content:center;width:0.62em;height:0.73em;flex-shrink:0}
+.verified-badge svg{width:100%;height:100%;display:block}
+h1{font-size:clamp(2.6rem,5.5vw,4.2rem);font-weight:700;line-height:1.08;letter-spacing:-0.03em;margin-bottom:0.6rem}
+.hero-location{display:inline-flex;align-items:center;gap:5px;font-size:13px;color:var(--text-faint);font-family:var(--mono);margin-bottom:1rem}
+.hero-location svg{width:13px;height:13px;flex-shrink:0}
+.hero-role{font-size:clamp(1rem,2.2vw,1.2rem);font-weight:300;color:var(--text-sub);margin-bottom:1.75rem}
+.hero-desc{font-size:15px;color:var(--text-sub);max-width:580px;line-height:1.85;margin-bottom:2.5rem}
+.hero-actions{display:flex;gap:0.875rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:0.65rem 1.35rem;border-radius:var(--radius-sm);font-size:13px;font-weight:500;font-family:var(--sans);text-decoration:none;cursor:pointer;transition:all 0.2s;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-outline{background:transparent;border-color:var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}
+section.page{padding-top:5rem;padding-bottom:5rem}
+.sec-label{font-size:10.5px;font-weight:600;font-family:var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:0.4rem}
+h2{font-size:1.8rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:2.25rem;color:var(--text)}
+.divider{width:40px;height:3px;border-radius:2px;background:var(--accent);margin-bottom:2.25rem;margin-top:-1.75rem}
+.skills-wrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.skill-group{background:var(--bg-card);padding:1.25rem 1.35rem;transition:background var(--transition)}
+.skill-group-label{font-size:10px;font-family:var(--mono);font-weight:500;color:var(--accent2);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.8rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-family:var(--mono);padding:3px 9px;border-radius:5px;background:var(--tag-bg);color:var(--tag-color);border:1px solid var(--tag-border)}
+.tag.g{background:var(--tag-green-bg);color:var(--tag-green);border-color:var(--tag-green-border)}
+.tag.p{background:var(--tag-pink-bg);color:var(--tag-pink);border-color:var(--tag-pink-border)}
+.tag.a{background:var(--tag-amber-bg);color:var(--tag-amber);border-color:var(--tag-amber-border)}
+.edu-list{display:flex;flex-direction:column;gap:1rem}
+.edu-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem 1.6rem;display:flex;gap:1.25rem;align-items:flex-start;box-shadow:var(--shadow);transition:border-color 0.2s,background var(--transition)}
+.edu-card:hover{border-color:var(--border-hover)}
+.edu-ico{width:44px;height:44px;min-width:44px;border-radius:10px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:20px}
+.edu-school{font-size:12px;color:var(--text-sub);margin-bottom:3px}
+.edu-degree{font-size:15px;font-weight:600;color:var(--text);margin-bottom:6px}
+.edu-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px;color:var(--text-faint);font-family:var(--mono)}
+.badge{background:var(--accent2-soft);color:var(--accent2);border:1px solid var(--tag-border);padding:2px 8px;border-radius:4px;font-size:10.5px}
+.edu-note{font-size:12px;color:var(--text-faint);margin-top:6px}
+.proj-group{margin-bottom:3rem}
+.proj-group:last-child{margin-bottom:0}
+.proj-group-header{display:flex;align-items:center;gap:10px;margin-bottom:1.1rem}
+.proj-group-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;background:var(--accent-soft)}
+.proj-group-title{font-size:13px;font-weight:600;font-family:var(--mono);letter-spacing:0.04em;color:var(--text)}
+.proj-group-count{font-size:11px;font-family:var(--mono);color:var(--text-faint);margin-left:auto}
+.proj-group-line{flex:1;height:1px;background:var(--border);margin-left:8px}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1rem}
+.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem 1.4rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.75rem;box-shadow:var(--shadow);transition:border-color 0.2s,transform 0.2s,background var(--transition)}
+.proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-name{font-size:14px;font-weight:600;color:var(--text)}
+.proj-arrow{font-size:15px;color:var(--text-faint);transition:color 0.2s}
+.proj-card:hover .proj-arrow{color:var(--accent)}
+.proj-desc{font-size:12px;color:var(--text-sub);line-height:1.65;flex:1}
+.proj-foot{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:11px;color:var(--text-faint);font-family:var(--mono)}
+.lang-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:3px;vertical-align:middle}
+.ld-py{background:#3572A5}.ld-js{background:#f1e05a}.ld-php{background:#4F5D95}
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:1rem}
+.lang-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.35rem;box-shadow:var(--shadow)}
+.lang-name{font-size:15px;font-weight:600;margin-bottom:2px}
+.lang-lvl{font-size:11px;color:var(--text-faint);font-family:var(--mono);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.lang-bar{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
+.lang-fill{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.blog-card{display:flex;align-items:flex-start;gap:1.4rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.6rem 1.8rem;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:border-color 0.2s,transform 0.2s,background var(--transition)}
+.blog-card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.blog-ico{width:52px;height:52px;min-width:52px;border-radius:12px;background:var(--accent-soft);display:flex;align-items:center;justify-content:center;font-size:24px;font-family:var(--mono);font-weight:700;color:var(--accent)}
+.blog-card-body{display:flex;flex-direction:column;gap:0.5rem}
+.blog-title{font-size:16px;font-weight:600;color:var(--text)}
+.blog-desc{font-size:13px;color:var(--text-sub);line-height:1.7;max-width:580px}
+.blog-foot{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-top:4px}
+.blog-link{font-size:11px;font-family:var(--mono);color:var(--accent);margin-left:auto}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.contact-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.4rem;text-decoration:none;color:inherit;display:flex;align-items:center;gap:1rem;box-shadow:var(--shadow);transition:border-color 0.2s,transform 0.2s,background var(--transition)}
+.contact-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.contact-ico{width:40px;height:40px;min-width:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;background:var(--accent-soft)}
+.contact-lbl{font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:0.08em;font-family:var(--mono);margin-bottom:2px}
+.contact-val{font-size:13px;font-weight:500;color:var(--text);word-break:break-all}
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:12px;color:var(--text-faint);font-family:var(--mono)}
+@media(max-width:640px){nav{padding:0 1.25rem}.nav-links{gap:1rem}.nav-links a{font-size:12px}h1{font-size:2.1rem}}
+@media(max-width:460px){.nav-links{display:none}}
+</style>
+</head>
+<body>
+
+<canvas id="bokeh-canvas"></canvas>
+
+<nav class="content">
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#blogs">Blogs</a></li>
+      <li><a href="#languages">Languages</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">🌙</button>
+  </div>
+</nav>
+
+<div class="content">
+
+<section id="hero" class="page">
+  <h1>Mohamed Ezer<br><span class="name-row">Bouzouraa<span class="verified-badge" title="Verified">
+    <svg viewBox="0 0 40 46" fill="none">
+      <path d="M20 2.5L4.5 9.2v10.5c0 10.2 6.6 19.7 15.5 22.8 8.9-3.1 15.5-12.6 15.5-22.8V9.2L20 2.5z" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.22)" stroke-width="1.2" stroke-linejoin="round"/>
+      <path d="M20 5L6.5 11v9.5c0 9.2 5.9 17.8 13.5 20.5 7.6-2.7 13.5-11.3 13.5-20.5V11L20 5z" fill="#22222e"/>
+      <path d="M20 5L6.5 11v9.5" stroke="rgba(255,255,255,0.12)" stroke-width="0.8" fill="none" stroke-linecap="round"/>
+      <polyline points="13,23 17.5,27.5 27,18" stroke="white" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+  </span></span></h1>
+  <p class="hero-location">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+    Tunis, Tunisia
+  </p>
+  <p class="hero-role">Software &amp; AI Engineer</p>
+  <p class="hero-desc">
+    A motivated, self-taught engineer specializing in artificial intelligence and machine learning.
+    I design, train, and deploy intelligent models — combining solid software engineering principles
+    with cutting-edge AI innovation to build scalable, data-driven solutions.
+  </p>
+  <div class="hero-actions">
+    <a href="#projects" class="btn btn-primary">View Projects</a>
+    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+    <a href="https://github.com/mohamedezerbouzouraa" target="_blank" class="btn btn-outline">GitHub ↗</a>
+    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDUgMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQmFzZUZvbnQgL1phcGZEaW5nYmF0cyAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Db250ZW50cyAxMCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgOSAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKE1vaGFtZWQgRXplciBCb3V6b3VyYWEgXDIwNSBSZXN1bWUpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDYgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxMCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA0MDU0Cj4+CnN0cmVhbQpHYXVgVz5CZWdbJnE5U1lSJkFHTixGXEAiVDJxKG1DMVVUZy5JJE9jcVonS1RLVT0jZT9MMClUSUt1TW9KVz9va2M3MiIqUT1wVV1SLyhAVlJpdTxuTSpJPSg1PkQ1QzldPjNiIW0/Pl8hXERyQkA2MCIobCUqOTI8b2RJbWZPYl0rJU4oNEE9Yi4rJm5mVl82I1lZTTBiNlohNktTJSkjUU5QLUsvMTg1WzRZbUY+KFE/RloiMS5nSUpScG5TIkFzNWkuYzV1WEJuVicrSzRUP3UnYCZ1KzxtXVY1SEZxZiFKYVhNU2pdS1tfaC1mdGtJKGBmRjRxUjFxZCJrQFdLJ2hgUTxgKitHcWA2cG5iMiRCZj4uLE9BVyNRbzslYWUsSktEVWRDWmJfcj5aaS4jWm5ASCQ0WVRGYzMvRClMOTojWVUkakNhai9MJDo4TWNNTDk1aHVSQzxmL0EhZVtCcikuMHRuaFxTXHJRbj10JVFEVENOc0hfT0NYIzs7aFZcXltvI1o3Lz1uO0ROaFoqVVAqQkVpQk8hJ0ElOHJUSU1ELVo5X2I/biw3Jy1NY2xeK3JbVV45Q2trTE9cTyhTXTJaOSYyVktoSS5QPGwiOyhoOmkmWmNZQDhgSi11W1NKKC5STypCNix0Iz9SOEByYTtiKy1aalQiYSUhYlhtJjhPTVEwSk84TyY2IUtrXWg5KFQrKzBCbkprT2xUajdBU1gyV0xuWnI6bl1Abz4lUTRjMTZGXF0pZUtAYWRBSmphMyooPTllbkdlQ1tWVDUiUSZScmlzJXBVMkYuMiJTXUw1SygqLD9aKVNFLTwyOCQxQzFpamdkLm9BQjc5aHNhJ2hkM2ViRHQhdEAhYz9ZXiJHYm1wcFRSN09nOk42PGg3aHVJQEthTmVNIzBCYCd0ZydhNG0/OztrbkRbMS0hI2clZi5FO3IlVDFOLUVka1dZOGE/Ri1WVjJSRG9ORCs/dCs3J3Irb25KP0xWRU5YJ3BtQm1LYkY3WU9Fa1NMcktkaDM/TT9mIkI3c3QiM2pHRVMwbi5EaS8/dC0hOTxhOihcKCwkNylkOFpiXGdQNTkuMjZwPHAiKDs7Ly1qMC4mSDA8cy9fTFdFSEhaMDxLOnFiajtfKmVfYW5VJUFda1JUaD9GM0JnZGBWb2VtcUFGPjBCa2pON1pVO0RdU0YyXEwhSExAIVNTSVRHbz9KKSZzKjdyRGYsXDxEb2JUQlJFIV1qXDVZOmRjVmM0OyFgQyIuS1lnJGQ0RC51R04oLD4wJ2RWbGg/R09RayFVXkI+WWNaNFVyaj9XLSNELT5dVic9OGBbb2BSNT9JQyk/V1gjJ2dKRlojZUVZcChhKlVcW2pwZnQjTjczSEUyZDxNZ2RmbihLPihyczI+OW5wPU1RZ3NJQFpmNGtiWiVpIkkmP25PYykycVEuSjFadTtJPl00Nj0xPlVeSEREQzU8Ri41SCQyTUUvXk4xXFUtLj1PT0llayMnLkE0cihNKFBGPTI8NzBkXjdZUEZkQmQxNkBNUUxBW3AnI2w3NU11KDc5U1A9dUdbdVRAPl11cmlyPmxoMjAuKVEkUUcxZjA8b2snaXNGI3FLVj5xU0BXSEkpSEorbCxoJmMyQkRucCs3NEpwZGVPY3NRKG1eZys4LGBUWCVTXSZTYVEkSjllXUJYMlonQXAnbkExTEA+QlRKVydrJkE+OEJiVzZbdWZdMCw4aTRyJDJkTitFR1o0RF8xMm07RnU4Z2MzMmA8M2E8b2ZRKnBXO0pQU1U5dTlIPz00Sy8zW0hVVDVXRykhWyF1cCozUy8uSF9gRl9wVTRUXjFzO1BpSEUpL2ZmKWVEWlRrJilLSlxzQzlQQ2BxPE1XcyguXElfYDshJ1RII2NbOHBOO3RiWklzPyZpX1gpIkIwVy00JCQ4MixxV1dLTj1cRG5UOWBHMyYnbV1MNWRZVSlhX2JgUiY/am9xV0MkcWQsQFU5Y000KFlCMDFWVk9wODwnUjs1UVllanVdZD5oMUI+IzxXai1wUVwmaT5FRjlVXF86NTdSSjxpUlImNW9YJ1I6VksqXShYKGM2YTFpOUcwOVtnNjkqOiFBOzw3RTZdK1V1Ok01JzQlY0MjKyNgVkxqQVY7MittZVlzKkdxLXMwQSNWKjA4QTVwITxJZj49UT1kRFJxW1tvJFI9ZCdCLXFUOFNgLW5WVm90JVdhKW42NHQsSUFdOltcVTsuU2xjZ3VmdUtQaTJVJC01Oz05Jmlwayc+QF9oUWMlZURVZCtoS287ZEs6TSQrZUEwJFNAOWYkVUpPXGJpVjlwQUlFZCg7RVdULWNDZz4mX3FwO1JRYCkmV0hiXCZfKWI+KWl0OkBwLyIzM2dpcG82az02Z0srK0AoXDdKZXVbQ05FNVNFNF10MmdJK1VtZURlT2BJS2tCJHNfUlRQNylybkVKVzM8TUclalswLDZMJy8zblNCMk5SN0xwRFcvSDhIRl0sLUtLJSJvUTlUamorIlZJN0NqM1xDJUY/Kk9GP1FAQ2QwWXBKZGh1ZmtRXk5hJU1GSjBASV45XTFgLj1yKVYkOFNnNE0wJDE6ZUkoRkknMlRHUEoyTzEuTi1SXj02UEM+XCNZLzlsWTxwYnEyOUsiYEEpaVZPXlJrcTNQTGwtTGh0O0lJOzs1a1xNNls4KjZxKlUsJjRoJnBiUEVLaF44IygnPiw8bU4hL2o5L0hNPjxKbUowazJvTkAsQFU/c0VVPEZnPWNGMSRJIlUyUytnTXBTNGlZUUdcRzQxZCQySElxKXRbZSVDam01OyltJE5CZExGZU0jZiY2ZUtjZC1sL10rKCFHZ2A9YUxFSTBtaEI7VSdGaUZYYEtRWWRrL0tCbk0kMiRCajUkNUBCJENsJ0BvT1BSRS9cOXVjVzczYVljUC1PcmZSRl5nakpKKz1lT0B0KVpXJHVLPmolWGMxNGJoTmVTNFxBNzteYk1ATXBSPjVOJlkxbG1sdXQqQjpeJXMvL0RHYkFwJlQjMlBoJzI8M2hNUTA3S09ecCkjbWB1NzNQZTk5Q21ibSQ+XmhaYmNyMV1uMkNFKzxHUy5NbkM2YXRPa3FqPmB0aUdyLidVWW1GMTNbXClEYlRdbEVrayJuRnUhYDdJWGBUXy9rcGs3J0oqM2tVZUE5aVBlcmosZGNqdSo7X3FAR19PV2Q/WkYvdFIlR0tMQklaJjE4ZzEqZGpJOF1kZEooTChWLGlyW2w4Lzc5U3IzZls1SkxiVTZFaV0oamEyIWUhXSopM1JlNDpQcGVVcTtsP3Q+PFBQO2JOL1NYKDJYYTtBbkw4PHFXMGkpa1IkMGpuPyxhVj8jaHN1RzJQJlFiPCY+NytUVGtsal07W0dJQFtIO2tfPFZTYmQzOlViLWlZc0E7JUVHOExickAwN10lZT84SEc6aXVcc11FZ15TQWs5UDc0a3FocTpYUWpgXmhMU29TL144PFJAUjlwMnBKKDFIJ2dbbjZCJV07OlNyJicwVGdtKEdqOVZyJnU/KCZDOWslc1BDckEwQDQoRFV1ZUNSZz5wKSNQU01lITIzT3MjX15PVkE5R3A2RGhYXlhBQiFcRiYuRCpcJm8wM0VlXSdAXF9tSmknXUFBQC1FNGE4LDJZYT9nQz9FNTtOUzE7XCxqQTtbVi9UKC85WyMwUFslXjlNZVVYW0ZBPyhjclMpTHQ+Xj9hJj0ybyVPX0R1NHNSQnVYMCFIQiU2MmViYlRzRnVaQVIrTGlmYUhNXWdHUEBFWkJlNlxcQEdKY1NvKEtLdGBRbTJqM2ZMaSdpRzw7K1E7R3UoZFk0WWYjJFoqOWJVX2hKUilmKDZiLD0pQEBuNF1CZ1YlZGc/OjZddUNAbnJGaVAvOzNzOG1NRSY5dUBHLFkvIWZOJXNXW19BcTFWbydPP3MxUFpCNC1IUl5uUWk1OV9ma2lLKikyX3A3Si9OMC0pNkpJaERrbGVgWzI3aTRwZE9LKjJmZWZJYGZlY19IZkREOFk4M0xJYUQ+MzROM21tLGpPLj1sKTZZKS9vRURobzonRSZPUFpUN3VdJlY2KSNRJEdPZzREN3ImMlA4bjtqLUFLJGojVk9lM2lfLFVhbGElZj5OP01uSVRgZVg+bk9GOFBSOGE3ZVdUUV5DZFRcYGo5PkZAWz4/U1JCRkEtVjhKNGY9JkBDWWpLSEFaSG8wUjRGO0pGRG9qXDYlMmVvNFs9WklIclk+UlpbdC8rMzgkYGZgczFbJU5uLzFxYUozcT9qPzxZa0QoVydaI1JGWyhOQV8lU0xuLFZPW2xCQS1qR1NTTyVsXSQ4Lj9XXmxuOCI2I3UkODdyYikhRmIvZGI1bWI4dUhFMy5cSCowSF1aV15qS2lybDxBZ0QrYFwsLDRWdUJsQTZ0RmJdI0VrT0ZZayZNMjIqRW0kVCYnVFprRDgzYy0sIj9HLjU6QkswUEFpL2FwWlw7LkU0LyJGZ3MxQk1qaz1DRmErLSFPUEBSO0dacTsqdSZhNnEqXypxPyhPVkBnXjlcalI3IVJScjVJNyFuS1FUSDtiM2suUVpILXAlJDFVcy0xYVQ/OHF1RD4xO01OJVpDc2FuUlhPZFE0M2VTTGYrbk5BU09NUj80M15WZmRUOVgySCJOKlcvS0EzakdRJlJiZFJEN148WjtiYF1vdUw4Q1NUS1Amak9HZUgrYWZIXz5HTmNJVGZROC5TNltETDVGO2RFNigyYjBmOy9DKVxbU0srPyQsU3JyZWRdTjJJSjFQRVNsRV1ldGFOYnBfQD0oSiRKbEt1IyVkT15yNGBJRmBSMFVmL3ErRHBaOycsVyxQNkNILkomUkEmKjlTKHRPLlxCci5hWzYjZEpcQjdmVGolZG1GTy9hImRsKEpeNCxWJyNITm1dOyIpPGNsS2ZUVDxIW1phJlosMyNsTHJwPiYsblszWU5nLSlGKytBZ0BlUGlrWT4lIV5lV2tbKVlYR0tsO2BOa0JeIiNSXjcwc0RTXTtzMEtHZjo7JW5wSWhcQk5FRUkxYS45RlE9UipUUzxgT0hyLXVVZXJCZUJDW2lCYGokcmwiN2BoWyFqNTZOY3MlOjUzc3Ihb2hyYCEoLHAlV0IxRVZQNz91aXJbKHBVPEM+MTJIX3VKYSo9NVBTXXFkWTxKXCdjcXI3PlxKK2xnPUI8LEJIMztfXzFyZ1k8Ik06UGhSbDRdRDQ+dFhwIVo1Sz5tXzFsdSFWNSRpaTllYm1rM0puQyNicEhqdGEsSHJbZUQqO2pxPitRLk1ZIShUbk48bE5iIyloNWZOJm5TcmJxVT8iU11iK2UwLmYzWyNIMUA/XDs/U0xwaSlPYD0sXiZBM0ExYCtvOE8mYV8rRD1aXGY4OFZoXXApIU8ybCIwKX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMjIgMDAwMDAgbiAKMDAwMDAwMDIyOSAwMDAwMCBuIAowMDAwMDAwMzQxIDAwMDAwIG4gCjAwMDAwMDA0NTYgMDAwMDAgbiAKMDAwMDAwMDUzOSAwMDAwMCBuIAowMDAwMDAwNzQzIDAwMDAwIG4gCjAwMDAwMDA4MTEgMDAwMDAgbiAKMDAwMDAwMTA5OCAwMDAwMCBuIAowMDAwMDAxMTU3IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDNkODk5ZTFmNDQ0NzIxYWZmM2ExMjEwZjA4NzgwNzVhPjwzZDg5OWUxZjQ0NDcyMWFmZjNhMTIxMGYwODc4MDc1YT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gOCAwIFIKL1Jvb3QgNyAwIFIKL1NpemUgMTEKPj4Kc3RhcnR4cmVmCjUzMDMKJSVFT0YK" download="Mohamed_Ezer_Resume.pdf" class="btn btn-outline">Resume ↓</a>
+  </div>
+</section>
+
+<section id="skills" class="page">
+  <p class="sec-label reveal-left">Expertise</p>
+  <h2 class="reveal">Skills &amp; Technologies</h2>
+  <div class="divider reveal"></div>
+  <div class="skills-wrap reveal-stagger">
+    <div class="skill-group"><p class="skill-group-label">AI / ML</p><div class="tags"><span class="tag">TensorFlow</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">Deep Learning</span><span class="tag">LLMs</span><span class="tag">RAG</span></div></div>
+    <div class="skill-group"><p class="skill-group-label">Programming</p><div class="tags"><span class="tag g">Python</span><span class="tag g">JavaScript</span><span class="tag g">C / C++</span><span class="tag g">Java</span><span class="tag g">PHP</span><span class="tag g">SQL</span></div></div>
+    <div class="skill-group"><p class="skill-group-label">Data Science</p><div class="tags"><span class="tag a">NumPy</span><span class="tag a">Pandas</span><span class="tag a">Matplotlib</span><span class="tag a">MediaPipe</span><span class="tag a">YOLOv8</span></div></div>
+    <div class="skill-group"><p class="skill-group-label">Engineering</p><div class="tags"><span class="tag p">Flask</span><span class="tag p">Symfony</span><span class="tag p">Git</span><span class="tag p">Linux</span><span class="tag p">REST APIs</span></div></div>
+  </div>
+</section>
+
+<section id="education" class="page">
+  <p class="sec-label reveal-left">Background</p>
+  <h2 class="reveal">Education</h2>
+  <div class="divider reveal"></div>
+  <div class="edu-list reveal-stagger">
+    <div class="edu-card"><div class="edu-ico">🎓</div><div><p class="edu-school">National Institute of Applied Sciences and Technology — INSAT</p><p class="edu-degree">Engineering · Software &amp; AI Specialization</p><div class="edu-meta"><span>2024 – Present</span><span class="badge">Ongoing</span></div><p class="edu-note">Engineering Preparatory Cycle in Math-Physics-Informatics<br>Specialization in Software Engineering</p></div></div>
+    <div class="edu-card"><div class="edu-ico">🏫</div><div><p class="edu-school">Lycée Salah Ben Youssef</p><p class="edu-degree">Baccalaureate — Tunisian Curriculum</p><div class="edu-meta"><span>2024</span><span class="badge">18.28 / 20</span></div></div></div>
+  </div>
+</section>
+
+<section id="projects" class="page">
+  <p class="sec-label reveal-left">Work</p>
+  <h2 class="reveal">Projects</h2>
+  <div class="divider reveal"></div>
+  <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">🤖</div><span class="proj-group-title">Agentic AI &amp; LLMs</span><span class="proj-group-count">5 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/INSAT-RAG-assistant" target="_blank"><div class="proj-top"><p class="proj-name">INSAT RAG Assistant</p><span class="proj-arrow">↗</span></div><p class="proj-desc">AI-powered multilingual chatbot for INSAT. Built with LangChain, BM25 retrieval, Groq LLMs, Flask, and a Glassmorphism UI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RAG</span><span class="tag">LangChain</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/RLHF-worldcup-2026" target="_blank"><div class="proj-top"><p class="proj-name">RLHF World Cup 2026 🏆</p><span class="proj-arrow">↗</span></div><p class="proj-desc">FIFA World Cup 2026 AI chatbot using Llama 3.3 70B via Groq. Every response can be rated 👍/👎 and adapts through RLHF.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RLHF</span><span class="tag">Groq</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Reviewify" target="_blank"><div class="proj-top"><p class="proj-name">Reviewify</p><span class="proj-arrow">↗</span></div><p class="proj-desc">LLM-powered multi-tool agent for HR managers. Input bullet points → polished employee reviews.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">LLM Agent</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/student-advisor-ai" target="_blank"><div class="proj-top"><p class="proj-name">Student Advisor AI</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Interactive chatbot that guides students step-by-step, explains concepts, and assigns exercises.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Education AI</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/MatchPicker-AI-Dashboard" target="_blank"><div class="proj-top"><p class="proj-name">MatchPicker AI Dashboard</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Football dashboard with real-time match analysis, UCL stats, and custom-trained AI chatbot.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Sports AI</span><span class="tag">Flask</span></div></a>
+  </div></div>
+
+  <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">👁️</div><span class="proj-group-title">Computer Vision</span><span class="proj-group-count">3 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/YOLOv8-CarCounter" target="_blank"><div class="proj-top"><p class="proj-name">YOLOv8 Car Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Lightweight car detection using Ultralytics YOLOv8. Detect, count, and visualize cars with bounding boxes.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Detection</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Push-Up-Counter-using-MediaPipe-Adaline" target="_blank"><div class="proj-top"><p class="proj-name">Push-Up Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Counts push-ups in video using an Adaline model and body joint angles via MediaPipe.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">MediaPipe</span><span class="tag">Pose</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Soccer-Team-Detection" target="_blank"><div class="proj-top"><p class="proj-name">Soccer Team Detection</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Detects and classifies football players into Blue/White teams using YOLOv8, analyzes jersey color.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Classification</span></div></a>
+  </div></div>
+
+  <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">📊</div><span class="proj-group-title">Classical ML</span><span class="proj-group-count">4 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Lifestyle-Stability-Index-using-GridSearchCV" target="_blank"><div class="proj-top"><p class="proj-name">Lifestyle Stability Index</p><span class="proj-arrow">↗</span></div><p class="proj-desc">SVC with GridSearchCV classifies STABLE vs UNSTABLE routines from sleep, steps, screen time.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">GridSearchCV</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/GEO_Country_Guesser_Using_Decision_Tree" target="_blank"><div class="proj-top"><p class="proj-name">Geo Country Guesser</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Decision Tree game that guesses a country from 15 geographic/demographic features.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Decision Tree</span><span class="tag">Tkinter</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/SpamGuard--SVM-using-kernel-trick-" target="_blank"><div class="proj-top"><p class="proj-name">SpamGuard (SVM)</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Desktop spam detection using TF-IDF and SVM with kernel trick. Tkinter GUI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">NLP</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/VehicleHealthPredictor" target="_blank"><div class="proj-top"><p class="proj-name">Vehicle Health Predictor</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Logistic Regression pipeline to classify cars as healthy/unhealthy from sensor data.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Logistic Reg.</span></div></a>
+  </div></div>
+
+  <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">🌐</div><span class="proj-group-title">Full-Stack &amp; Web</span><span class="proj-group-count">1 project</span><div class="proj-group-line"></div></div><div class="projects-grid">
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/mathematicians-legacy" target="_blank"><div class="proj-top"><p class="proj-name">Mathematicians Legacy</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Full-stack platform: interactive map of mathematicians powered by Symfony, AI chatbot with Gemini &amp; Flask.</p><div class="proj-foot"><span><span class="lang-dot ld-php"></span>PHP / Python</span><span class="tag">Symfony</span><span class="tag">Gemini</span></div></a>
+  </div></div>
+  <div class="reveal" style="text-align:center;margin-top:2rem"><a href="https://github.com/mohamedezerbouzouraa" target="_blank" class="btn btn-outline">View all on GitHub ↗</a></div>
+</section>
+
+<!-- BLOGS -->
+<section id="blogs" class="page">
+  <p class="sec-label reveal-left">Writing</p>
+  <h2 class="reveal">Blogs</h2>
+  <div class="divider reveal"></div>
+  <div class="reveal">
+    <a href="https://mohamedezerbouzouraa.github.io/math-blog/" target="_blank" class="blog-card">
+      <div class="blog-card-left">
+        <div class="blog-ico">∑</div>
+      </div>
+      <div class="blog-card-body">
+        <p class="blog-title">Maths Blog</p>
+        <p class="blog-desc">Exploring proofs, number theory, logic, and fascinating mathematical ideas.</p>
+        <div class="blog-foot">
+          <span class="tag">Proofs</span>
+          <span class="tag">Number Theory</span>
+          <span class="tag">Logic</span>
+          <span class="blog-link">mohamedezerbouzouraa.github.io/math-blog ↗</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section id="languages" class="page">
+  <p class="sec-label reveal-left">Communication</p>
+  <h2 class="reveal">Spoken Languages</h2>
+  <div class="divider reveal"></div>
+  <div class="lang-grid reveal-stagger">
+    <div class="lang-card"><p class="lang-name">Arabic</p><p class="lang-lvl">Native</p><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
+    <div class="lang-card"><p class="lang-name">French</p><p class="lang-lvl">Fluent</p><div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div></div>
+    <div class="lang-card"><p class="lang-name">English</p><p class="lang-lvl">High Level</p><div class="lang-bar"><div class="lang-fill" style="width:80%"></div></div></div>
+    <div class="lang-card"><p class="lang-name">Italian</p><p class="lang-lvl">Intermediate</p><div class="lang-bar"><div class="lang-fill" style="width:50%"></div></div></div>
+  </div>
+</section>
+
+<section id="contact" class="page">
+  <p class="sec-label reveal-left">Reach Out</p>
+  <h2 class="reveal">Contact</h2>
+  <div class="divider reveal"></div>
+  <div class="contact-grid reveal-stagger">
+    <a href="mailto:mrezeryt178@gmail.com" class="contact-card"><div class="contact-ico">✉️</div><div><p class="contact-lbl">Email</p><p class="contact-val">mrezeryt178@gmail.com</p></div></a>
+    <a href="https://linkedin.com/in/mohamed-ezer-bouzouraa-663489379" target="_blank" class="contact-card"><div class="contact-ico">💼</div><div><p class="contact-lbl">LinkedIn</p><p class="contact-val">Mohamed Ezer Bouzouraa</p></div></a>
+    <a href="https://github.com/mohamedezerbouzouraa" target="_blank" class="contact-card"><div class="contact-ico">🐙</div><div><p class="contact-lbl">GitHub</p><p class="contact-val">mohamedezerbouzouraa</p></div></a>
+  </div>
+</section>
+
+</div>
+
+<footer><p>© 2026 Mohamed Ezer Bouzouraa · Tunis, Tunisia</p></footer>
+
+<script>
+window.addEventListener('load', () => {
+  document.getElementById('hero').classList.add('hero-ready');
+});
+
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-stagger');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+revealElements.forEach(el => observer.observe(el));
+
+const btn = document.getElementById('themeBtn');
+const html = document.documentElement;
+btn.addEventListener('click', () => {
+  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', newTheme);
+  btn.textContent = newTheme === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem('theme', newTheme);
+});
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  html.setAttribute('data-theme', savedTheme);
+  btn.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+  html.setAttribute('data-theme', 'light');
+  btn.textContent = '☀️';
+}
+
+const canvas = document.getElementById('bokeh-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, stars = [], nebulaSeeds = [];
+
+function makeStar() {
+  const roll = Math.random();
+  const tier = roll < 0.90 ? 0 : roll < 0.98 ? 1 : 2;
+  const radii = [0.4, 0.85, 1.5];
+  const glows = [0, 1.5, 4.0];
+  let cr = 210, cg = 220, cb = 255;
+  const tint = Math.random();
+  if (tint < 0.12) { cr = 180; cg = 210; cb = 255; }
+  if (tint < 0.04) { cr = 255; cg = 240; cb = 210; }
+  return {
+    x: Math.random() * W, y: Math.random() * H,
+    vx: (Math.random() - 0.5) * 0.06, vy: (Math.random() - 0.5) * 0.04,
+    r: radii[tier], glow: glows[tier], tier, cr, cg, cb,
+    twinkleSpeed: Math.random() * 1.2 + 0.3, twinklePhase: Math.random() * Math.PI * 2,
+    alphaBase: tier === 0 ? (Math.random() * 0.5 + 0.25) : tier === 1 ? (Math.random() * 0.35 + 0.55) : (Math.random() * 0.25 + 0.70),
+    t: Math.random() * 100,
+  };
+}
+function makeNebulaSeed() {
+  const hues = [[60,40,120],[30,20,90],[20,50,110],[40,25,100]];
+  const c = hues[Math.floor(Math.random() * hues.length)];
+  return {
+    x: Math.random() * W, y: Math.random() * H,
+    rx: Math.random() * 280 + 120, ry: Math.random() * 160 + 80,
+    rot: Math.random() * Math.PI, alpha: Math.random() * 0.055 + 0.012,
+    cr: c[0], cg: c[1], cb: c[2],
+  };
+}
+function initScene() {
+  stars = []; nebulaSeeds = [];
+  const starCount = Math.floor((W * H) / 3500);
+  for (let i = 0; i < starCount; i++) stars.push(makeStar());
+  const nebCount = Math.floor((W * H) / 180000) + 3;
+  for (let i = 0; i < nebCount; i++) nebulaSeeds.push(makeNebulaSeed());
+}
+function resizeCanvas() {
+  W = canvas.width = window.innerWidth;
+  H = canvas.height = window.innerHeight;
+  initScene();
+}
+function drawDarkMode() {
+  if (html.getAttribute('data-theme') === 'light') return;
+  ctx.fillStyle = '#080810';
+  ctx.fillRect(0, 0, W, H);
+  nebulaSeeds.forEach(n => {
+    ctx.save();
+    ctx.translate(n.x, n.y);
+    ctx.rotate(n.rot);
+    ctx.scale(1, n.ry / n.rx);
+    const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, n.rx);
+    grad.addColorStop(0, `rgba(${n.cr},${n.cg},${n.cb},${n.alpha})`);
+    grad.addColorStop(0.5, `rgba(${n.cr},${n.cg},${n.cb},${n.alpha * 0.4})`);
+    grad.addColorStop(1, `rgba(${n.cr},${n.cg},${n.cb},0)`);
+    ctx.beginPath();
+    ctx.arc(0, 0, n.rx, 0, Math.PI * 2);
+    ctx.fillStyle = grad;
+    ctx.fill();
+    ctx.restore();
+  });
+  stars.forEach(s => {
+    s.t += 0.016;
+    s.x += s.vx; s.y += s.vy;
+    if (s.x < -2) s.x = W + 2;
+    if (s.x > W+2) s.x = -2;
+    if (s.y < -2) s.y = H + 2;
+    if (s.y > H+2) s.y = -2;
+    const twinkle = 0.82 + 0.18 * Math.sin(s.t * s.twinkleSpeed + s.twinklePhase);
+    const alpha = s.alphaBase * twinkle;
+    if (s.glow > 0) {
+      const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r + s.glow);
+      grad.addColorStop(0, `rgba(${s.cr},${s.cg},${s.cb},${alpha * 0.55})`);
+      grad.addColorStop(0.4, `rgba(${s.cr},${s.cg},${s.cb},${alpha * 0.18})`);
+      grad.addColorStop(1, `rgba(${s.cr},${s.cg},${s.cb},0)`);
+      ctx.beginPath();
+      ctx.arc(s.x, s.y, s.r + s.glow, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(${s.cr},${s.cg},${s.cb},${alpha})`;
+    ctx.fill();
+  });
+}
+function animate() {
+  drawDarkMode();
+  requestAnimationFrame(animate);
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+animate();
+</script>
+</body>
+</html>
