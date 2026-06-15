@@ -92,14 +92,17 @@ h2{font-size:1.8rem;font-weight:700;letter-spacing:-0.025em;margin-bottom:2.25re
 .proj-group-title{font-size:13px;font-weight:600;font-family:var(--mono);letter-spacing:0.04em;color:var(--text)}
 .proj-group-count{font-size:11px;font-family:var(--mono);color:var(--text-faint);margin-left:auto}
 .proj-group-line{flex:1;height:1px;background:var(--border);margin-left:8px}
-.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:1rem}
-.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem 1.4rem;text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.75rem;box-shadow:var(--shadow);transition:border-color 0.2s,transform 0.2s,background var(--transition)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.proj-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:0.7rem;box-shadow:var(--shadow);transition:border-color 0.2s,transform 0.2s,background var(--transition);overflow:hidden}
 .proj-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.proj-top{display:flex;justify-content:space-between;align-items:flex-start}
+.proj-image{width:100%;height:130px;overflow:hidden;background:#0a0a14;border-bottom:1px solid var(--border);flex-shrink:0}
+.proj-image img{width:100%;height:100%;object-fit:cover;display:block}
+.proj-content{padding:0 1.2rem 1.2rem 1.2rem}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.4rem}
 .proj-name{font-size:14px;font-weight:600;color:var(--text)}
 .proj-arrow{font-size:15px;color:var(--text-faint);transition:color 0.2s}
 .proj-card:hover .proj-arrow{color:var(--accent)}
-.proj-desc{font-size:12px;color:var(--text-sub);line-height:1.65;flex:1}
+.proj-desc{font-size:12px;color:var(--text-sub);line-height:1.65;margin-bottom:0.6rem}
 .proj-foot{display:flex;align-items:center;flex-wrap:wrap;gap:6px;font-size:11px;color:var(--text-faint);font-family:var(--mono)}
 .lang-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:3px;vertical-align:middle}
 .ld-py{background:#3572A5}.ld-js{background:#f1e05a}.ld-php{background:#4F5D95}
@@ -171,7 +174,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <a href="#projects" class="btn btn-primary">View Projects</a>
     <a href="#contact" class="btn btn-outline">Get in Touch</a>
     <a href="https://github.com/mohamedezerbouzouraa" target="_blank" class="btn btn-outline">GitHub ↗</a>
-    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDUgMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQmFzZUZvbnQgL1phcGZEaW5nYmF0cyAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Db250ZW50cyAxMCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgOSAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKE1vaGFtZWQgRXplciBCb3V6b3VyYWEgXDIwNSBSZXN1bWUpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDYgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxMCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA0MDU0Cj4+CnN0cmVhbQpHYXVgVz5CZWdbJnE5U1lSJkFHTixGXEAiVDJxKG1DMVVUZy5JJE9jcVonS1RLVT0jZT9MMClUSUt1TW9KVz9va2M3MiIqUT1wVV1SLyhAVlJpdTxuTSpJPSg1PkQ1QzldPjNiIW0/Pl8hXERyQkA2MCIobCUqOTI8b2RJbWZPYl0rJU4oNEE9Yi4rJm5mVl82I1lZTTBiNlohNktTJSkjUU5QLUsvMTg1WzRZbUY+KFE/RloiMS5nSUpScG5TIkFzNWkuYzV1WEJuVicrSzRUP3UnYCZ1KzxtXVY1SEZxZiFKYVhNU2pdS1tfaC1mdGtJKGBmRjRxUjFxZCJrQFdLJ2hgUTxgKitHcWA2cG5iMiRCZj4uLE9BVyNRbzslYWUsSktEVWRDWmJfcj5aaS4jWm5ASCQ0WVRGYzMvRClMOTojWVUkakNhai9MJDo4TWNNTDk1aHVSQzxmL0EhZVtCcikuMHRuaFxTXHJRbj10JVFEVENOc0hfT0NYIzs7aFZcXltvI1o3Lz1uO0ROaFoqVVAqQkVpQk8hJ0ElOHJUSU1ELVo5X2I/biw3Jy1NY2xeK3JbVV45Q2trTE9cTyhTXTJaOSYyVktoSS5QPGwiOyhoOmkmWmNZQDhgSi11W1NKKC5STypCNix0Iz9SOEByYTtiKy1aalQiYSUhYlhtJjhPTVEwSk84TyY2IUtrXWg5KFQrKzBCbkprT2xUajdBU1gyV0xuWnI6bl1Abz4lUTRjMTZGXF0pZUtAYWRBSmphMyooPTllbkdlQ1tWVDUiUSZScmlzJXBVMkYuMiJTXUw1SygqLD9aKVNFLTwyOCQxQzFpamdkLm9BQjc5aHNhJ2hkM2ViRHQhdEAhYz9ZXiJHYm1wcFRSN09nOk42PGg3aHVJQEthTmVNIzBCYCd0ZydhNG0/OztrbkRbMS0hI2clZi5FO3IlVDFOLUVka1dZOGE/Ri1WVjJSRG9ORCs/dCs3J3Irb25KP0xWRU5YJ3BtQm1LYkY3WU9Fa1NMcktkaDM/TT9mIkI3c3QiM2pHRVMwbi5EaS8/dC0hOTxhOihcKCwkNylkOFpiXGdQNTkuMjZwPHAiKDs7Ly1qMC4mSDA8cy9fTFdFSEhaMDxLOnFiajtfKmVfYW5VJUFda1JUaD9GM0JnZGBWb2VtcUFGPjBCa2pON1pVO0RdU0YyXEwhSExAIVNTSVRHbz9KKSZzKjdyRGYsXDxEb2JUQlJFIV1qXDVZOmRjVmM0OyFgQyIuS1lnJGQ0RC51R04oLD4wJ2RWbGg/R09RayFVXkI+WWNaNFVyaj9XLSNELT5dVic9OGBbb2BSNT9JQyk/V1gjJ2dKRlojZUVZcChhKlVcW2pwZnQjTjczSEUyZDxNZ2RmbihLPihyczI+OW5wPU1RZ3NJQFpmNGtiWiVpIkkmP25PYykycVEuSjFadTtJPl00Nj0xPlVeSEREQzU8Ri41SCQyTUUvXk4xXFUtLj1PT0llayMnLkE0cihNKFBGPTI8NzBkXjdZUEZkQmQxNkBNUUxBW3AnI2w3NU11KDc5U1A9dUdbdVRAPl11cmlyPmxoMjAuKVEkUUcxZjA8b2snaXNGI3FLVj5xU0BXSEkpSEorbCxoJmMyQkRucCs3NEpwZGVPY3NRKG1eZys4LGBUWCVTXSZTYVEkSjllXUJYMlonQXAnbkExTEA+QlRKVydrJkE+OEJiVzZbdWZdMCw4aTRyJDJkTitFR1o0RF8xMm07RnU4Z2MzMmA8M2E8b2ZRKnBXO0pQU1U5dTlIPz00Sy8zW0hVVDVXRykhWyF1cCozUy8uSF9gRl9wVTRUXjFzO1BpSEUpL2ZmKWVEWlRrJilLSlxzQzlQQ2BxPE1XcyguXElfYDshJ1RII2NbOHBOO3RiWklzPyZpX1gpIkIwVy00JCQ4MixxV1dLTj1cRG5UOWBHMyYnbV1MNWRZVSlhX2JgUiY/am9xV0MkcWQsQFU5Y000KFlCMDFWVk9wODwnUjs1UVllanVdZD5oMUI+IzxXai1wUVwmaT5FRjlVXF86NTdSSjxpUlImNW9YJ1I6VksqXShYKGM2YTFpOUcwOVtnNjkqOiFBOzw3RTZdK1V1Ok01JzQlY0MjKyNgVkxqQVY7MittZVlzKkdxLXMwQSNWKjA4QTVwITxJZj49UT1kRFJxW1tvJFI9ZCdCLXFUOFNgLW5WVm90JVdhKW42NHQsSUFdOltcVTsuU2xjZ3VmdUtQaTJVJC01Oz05Jmlwayc+QF9oUWMlZURVZCtoS287ZEs6TSQrZUEwJFNAOWYkVUpPXGJpVjlwQUlFZCg7RVdULWNDZz4mX3FwO1JRYCkmV0hiXCZfKWI+KWl0OkBwLyIzM2dpcG82az02Z0srK0AoXDdKZXVbQ05FNVNFNF10MmdJK1VtZURlT2BJS2tCJHNfUlRQNylybkVKVzM8TUclalswLDZMJy8zblNCMk5SN0xwRFcvSDhIRl0sLUtLJSJvUTlUamorIlZJN0NqM1xDJUY/Kk9GP1FAQ2QwWXBKZGh1ZmtRXk5hJU1GSjBASV45XTFgLj1yKVYkOFNnNE0wJDE6ZUkoRkknMlRHUEoyTzEuTi1SXj02UEM+XCNZLzlsWTxwYnEyOUsiYEEpaVZPXlJrcTNQTGwtTGh0O0lJOzs1a1xNNls4KjZxKlUsJjRoJnBiUEVLaF44IygnPiw8bU4hL2o5L0hNPjxKbUowazJvTkAsQFU/c0VVPEZnPWNGMSRJIlUyUytnTXBTNGlZUUdcRzQxZCQySElxKXRbZSVDam01OyltJE5CZExGZU0jZiY2ZUtjZC1sL10rKCFHZ2A9YUxFSTBtaEI7VSdGaUZYYEtRWWRrL0tCbk0kMiRCajUkNUBCJENsJ0BvT1BSRS9cOXVjVzczYVljUC1PcmZSRl5nakpKKz1lT0B0KVpXJHVLPmolWGMxNGJoTmVTNFxBNzteYk1ATXBSPjVOJlkxbG1sdXQqQjpeJXMvL0RHYkFwJlQjMlBoJzI8M2hNUTA3S09ecCkjbWB1NzNQZTk5Q21ibSQ+XmhaYmNyMV1uMkNFKzxHUy5NbkM2YXRPa3FqPmB0aUdyLidVWW1GMTNbXClEYlRdbEVrayJuRnUhYDdJWGBUXy9rcGs3J0oqM2tVZUE5aVBlcmosZGNqdSo7X3FAR19PV2Q/WkYvdFIlR0tMQklaJjE4ZzEqZGpJOF1kZEooTChWLGlyW2w4Lzc5U3IzZls1SkxiVTZFaV0oamEyIWUhXSopM1JlNDpQcGVVcTtsP3Q+PFBQO2JOL1NYKDJYYTtBbkw4PHFXMGkpa1IkMGpuPyxhVj8jaHN1RzJQJlFiPCY+NytUVGtsal07W0dJQFtIO2tfPFZTYmQzOlViLWlZc0E7JUVHOExickAwN10lZT84SEc6aXVcc11FZ15TQWs5UDc0a3FocTpYUWpgXmhMU29TL144PFJAUjlwMnBKKDFIJ2dbbjZCJV07OlNyJicwVGdtKEdqOVZyJnU/KCZDOWslc1BDckEwQDQoRFV1ZUNSZz5wKSNQU01lITIzT3MjX15PVkE5R3A2RGhYXlhBQiFcRiYuRCpcJm8wM0VlXSdAXF9tSmknXUFBQC1FNGE4LDJZYT9nQz9FNTtOUzE7XCxqQTtbVi9UKC85WyMwUFslXjlNZVVYW0ZBPyhjclMpTHQ+Xj9hJj0ybyVPX0R1NHNSQnVYMCFIQiU2MmViYlRzRnVaQVIrTGlmYUhNXWdHUEBFWkJlNlxcQEdKY1NvKEtLdGBRbTJqM2ZMaSdpRzw7K1E7R3UoZFk0WWYjJFoqOWJVX2hKUilmKDZiLD0pQEBuNF1CZ1YlZGc/OjZddUNAbnJGaVAvOzNzOG1NRSY5dUBHLFkvIWZOJXNXW19BcTFWbydPP3MxUFpCNC1IUl5uUWk1OV9ma2lLKikyX3A3Si9OMC0pNkpJaERrbGVgWzI3aTRwZE9LKjJmZWZJYGZlY19IZkREOFk4M0xJYUQ+MzROM21tLGpPLj1sKTZZKS9vRURobzonRSZPUFpUN3VdJlY2KSNRJEdPZzREN3ImMlA4bjtqLUFLJGojVk9lM2lfLFVhbGElZj5OP01uSVRgZVg+bk9GOFBSOGE3ZVdUUV5DZFRcYGo5PkZAWz4/U1JCRkEtVjhKNGY9JkBDWWpLSEFaSG8wUjRGO0pGRG9qXDYlMmVvNFs9WklIclk+UlpbdC8rMzgkYGZgczFbJU5uLzFxYUozcT9qPzxZa0QoVydaI1JGWyhOQV8lU0xuLFZPW2xCQS1qR1NTTyVsXSQ4Lj9XXmxuOCI2I3UkODdyYikhRmIvZGI1bWI4dUhFMy5cSCowSF1aV15qS2lybDxBZ0QrYFwsLDRWdUJsQTZ0RmJdI0VrT0ZZayZNMjIqRW0kVCYnVFprRDgzYy0sIj9HLjU6QkswUEFpL2FwWlw7LkU0LyJGZ3MxQk1qaz1DRmErLSFPUEBSO0dacTsqdSZhNnEqXypxPyhPVkBnXjlcalI3IVJScjVJNyFuS1FUSDtiM2suUVpILXAlJDFVcy0xYVQ/OHF1RD4xO01OJVpDc2FuUlhPZFE0M2VTTGYrbk5BU09NUj80M15WZmRUOVgySCJOKlcvS0EzakdRJlJiZFJEN148WjtiYF1vdUw4Q1NUS1Amak9HZUgrYWZIXz5HTmNJVGZROC5TNltETDVGO2RFNigyYjBmOy9DKVxbU0srPyQsU3JyZWRdTjJJSjFQRVNsRV1ldGFOYnBfQD0oSiRKbEt1IyVkT15yNGBJRmBSMFVmL3ErRHBaOycsVyxQNkNILkomUkEmKjlTKHRPLlxCci5hWzYjZEpcQjdmVGolZG1GTy9hImRsKEpeNCxWJyNITm1dOyIpPGNsS2ZUVDxIW1phJlosMyNsTHJwPiYsblszWU5nLSlGKytBZ0BlUGlrWT4lIV5lV2tbKVlYR0tsO2BOa0JeIiNSXjcwc0RTXTtzMEtHZjo7JW5wSWhcQk5FRUkxYS45RlE9UipUUzxgT0hyLXVVZXJCZUJDW2lCYGokcmwiN2BoWyFqNTZOY3MlOjUzc3Ihb2hyYCEoLHAlV0IxRVZQNz91aXJbKHBVPEM+MTJIX3VKYSo9NVBTXXFkWTxKXCdjcXI3PlxKK2xnPUI8LEJIMztfXzFyZ1k8Ik06UGhSbDRdRDQ+dFhwIVo1Sz5tXzFsdSFWNSRpaTllYm1rM0puQyNicEhqdGEsSHJbZUQqO2pxPitRLk1ZIShUbk48bE5iIyloNWZOJm5TcmJxVT8iU11iK2UwLmYzWyNIMUA/XDs/U0xwaSlPYD0sXiZBM0ExYCtvOE8mYV8rRD1aXGY4OFZoXXApIU8ybCIwKX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMjIgMDAwMDAgbiAKMDAwMDAwMDIyOSAwMDAwMCBuIAowMDAwMDAwMzQxIDAwMDAwIG4gCjAwMDAwMDA0NTYgMDAwMDAgbiAKMDAwMDAwMDUzOSAwMDAwMCBuIAowMDAwMDAwNzQzIDAwMDAwIG4gCjAwMDAwMDA4MTEgMDAwMDAgbiAKMDAwMDAwMTA5OCAwMDAwMCBuIAowMDAwMDAxMTU3IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDNkODk5ZTFmNDQ0NzIxYWZmM2ExMjEwZjA4NzgwNzVhPjwzZDg5OWUxZjQ0NDcyMWFmZjNhMTIxMGYwODc4MDc1YT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gOCAwIFIKL1Jvb3QgNyAwIFIKL1NpemUgMTEKPj4Kc3RhcnR4cmVmCjUzMDMKJSVFT0YK" download="Mohamed_Ezer_Resume.pdf" class="btn btn-outline">Resume ↓</a>
+    <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUiAvRjMgNCAwIFIgL0Y0IDUgMCBSCj4+CmVuZG9iagoyIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhIC9FbmNvZGluZyAvV2luQW5zaUVuY29kaW5nIC9OYW1lIC9GMSAvU3VidHlwZSAvVHlwZTEgL1R5cGUgL0ZvbnQKPj4KZW5kb2JqCjMgMCBvYmoKPDwKL0Jhc2VGb250IC9IZWx2ZXRpY2EtQm9sZCAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjIgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago0IDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLU9ibGlxdWUgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YzIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNSAwIG9iago8PAovQmFzZUZvbnQgL1phcGZEaW5nYmF0cyAvTmFtZSAvRjQgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iago2IDAgb2JqCjw8Ci9Db250ZW50cyAxMCAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA5IDAgUiAvUmVzb3VyY2VzIDw8Ci9Gb250IDEgMCBSIC9Qcm9jU2V0IFsgL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSSBdCj4+IC9Sb3RhdGUgMCAvVHJhbnMgPDwKCj4+IAogIC9UeXBlIC9QYWdlCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9QYWdlTW9kZSAvVXNlTm9uZSAvUGFnZXMgOSAwIFIgL1R5cGUgL0NhdGFsb2cKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0F1dGhvciAoYW5vbnltb3VzKSAvQ3JlYXRpb25EYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL0NyZWF0b3IgKGFub255bW91cykgL0tleXdvcmRzICgpIC9Nb2REYXRlIChEOjIwMjYwNjEyMTA0OTE3KzAwJzAwJykgL1Byb2R1Y2VyIChSZXBvcnRMYWIgUERGIExpYnJhcnkgLSBcKG9wZW5zb3VyY2VcKSkgCiAgL1N1YmplY3QgKHVuc3BlY2lmaWVkKSAvVGl0bGUgKE1vaGFtZWQgRXplciBCb3V6b3VyYWEgXDIwNSBSZXN1bWUpIC9UcmFwcGVkIC9GYWxzZQo+PgplbmRvYmoKOSAwIG9iago8PAovQ291bnQgMSAvS2lkcyBbIDYgMCBSIF0gL1R5cGUgL1BhZ2VzCj4+CmVuZG9iagoxMCAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCA0MDU0Cj4+CnN0cmVhbQpHYXVgVz5CZWdbJnE5U1lSJkFHTixGXEAiVDJxKG1DMVVUZy5JJE9jcVonS1RLVT0jZT9MMClUSUt1TW9KVz9va2M3MiIqUT1wVV1SLyhAVlJpdTxuTSpJPSg1PkQ1QzldPjNiIW0/Pl8hXERyQkA2MCIobCUqOTI8b2RJbWZPYl0rJU4oNEE9Yi4rJm5mVl82I1lZTTBiNlohNktTJSkjUU5QLUsvMTg1WzRZbUY+KFE/RloiMS5nSUpScG5TIkFzNWkuYzV1WEJuVicrSzRUP3UnYCZ1KzxtXVY1SEZxZiFKYVhNU2pdS1tfaC1mdGtJKGBmRjRxUjFxZCJrQFdLJ2hgUTxgKitHcWA2cG5iMiRCZj4uLE9BVyNRbzslYWUsSktEVWRDWmJfcj5aaS4jWm5ASCQ0WVRGYzMvRClMOTojWVUkakNhai9MJDo4TWNNTDk1aHVSQzxmL0EhZVtCcikuMHRuaFxTXHJRbj10JVFEVENOc0hfT0NYIzs7aFZcXltvI1o3Lz1uO0ROaFoqVVAqQkVpQk8hJ0ElOHJUSU1ELVo5X2I/biw3Jy1NY2xeK3JbVV45Q2trTE9cTyhTXTJaOSYyVktoSS5QPGwiOyhoOmkmWmNZQDhgSi11W1NKKC5STypCNix0Iz9SOEByYTtiKy1aalQiYSUhYlhtJjhPTVEwSk84TyY2IUtrXWg5KFQrKzBCbkprT2xUajdBU1gyV0xuWnI6bl1Abz4lUTRjMTZGXF0pZUtAYWRBSmphMyooPTllbkdlQ1tWVDUiUSZScmlzJXBVMkYuMiJTXUw1SygqLD9aKVNFLTwyOCQxQzFpamdkLm9BQjc5aHNhJ2hkM2ViRHQhdEAhYz9ZXiJHYm1wcFRSN09nOk42PGg3aHVJQEthTmVNIzBCYCd0ZydhNG0/OztrbkRbMS0hI2clZi5FO3IlVDFOLUVka1dZOGE/Ri1WVjJSRG9ORCs/dCs3J3Irb25KP0xWRU5YJ3BtQm1LYkY3WU9Fa1NMcktkaDM/TT9mIkI3c3QiM2pHRVMwbi5EaS8/dC0hOTxhOihcKCwkNylkOFpiXGdQNTkuMjZwPHAiKDs7Ly1qMC4mSDA8cy9fTFdFSEhaMDxLOnFiajtfKmVfYW5VJUFda1JUaD9GM0JnZGBWb2VtcUFGPjBCa2pON1pVO0RdU0YyXEwhSExAIVNTSVRHbz9KKSZzKjdyRGYsXDxEb2JUQlJFIV1qXDVZOmRjVmM0OyFgQyIuS1lnJGQ0RC51R04oLD4wJ2RWbGg/R09RayFVXkI+WWNaNFVyaj9XLSNELT5dVic9OGBbb2BSNT9JQyk/V1gjJ2dKRlojZUVZcChhKlVcW2pwZnQjTjczSEUyZDxNZ2RmbihLPihyczI+OW5wPU1RZ3NJQFpmNGtiWiVpIkkmP25PYykycVEuSjFadTtJPl00Nj0xPlVeSEREQzU8Ri41SCQyTUUvXk4xXFUtLj1PT0llayMnLkE0cihNKFBGPTI8NzBkXjdZUEZkQmQxNkBNUUxBW3AnI2w3NU11KDc5U1A9dUdbdVRAPl11cmlyPmxoMjAuKVEkUUcxZjA8b2snaXNGI3FLVj5xU0BXSEkpSEorbCxoJmMyQkRucCs3NEpwZGVPY3NRKG1eZys4LGBUWCVTXSZTYVEkSjllXUJYMlonQXAnbkExTEA+QlRKVydrJkE+OEJiVzZbdWZdMCw4aTRyJDJkTitFR1o0RF8xMm07RnU4Z2MzMmA8M2E8b2ZRKnBXO0pQU1U5dTlIPz00Sy8zW0hVVDVXRykhWyF1cCozUy8uSF9gRl9wVTRUXjFzO1BpSEUpL2ZmKWVEWlRrJilLSlxzQzlQQ2BxPE1XcyguXElfYDshJ1RII2NbOHBOO3RiWklzPyZpX1gpIkIwVy00JCQ4MixxV1dLTj1cRG5UOWBHMyYnbV1MNWRZVSlhX2JgUiY/am9xV0MkcWQsQFU5Y000KFlCMDFWVk9wODwnUjs1UVllanVkZD5oMUI+IzxXai1wUVwmaT5FRjlVXF86NTdSSjxpUlImNW9YJ1I6VksqXShYKGM2YTFpOUcwOVtnNjkqOiFBOzw3RTZdK1V1Ok01JzQlY0MjKyNgVkxqQVY7MittZVlzKkdxLXMwQSNWKjA4QTVwITxJZj49UT1kRFJxW1tvJFI9ZCdCLXFUOFNgLW5WVm90JVdhKW42NHQsSUFdOltcVTsuU2xjZ3VmdUtQaTJVJC01Oz05Jmlwayc+QF9oUWMlZURVZCtoS287ZEs6TSQrZUEwJFNAOWYkVUpPXGJpVjlwQUlFZCg7RVdULWNDZz4mX3FwO1JRYCkmV0hiXCZfKWI+KWl0OkBwLyIzM2dpcG82az02Z0srK0AoXDdKZXVbQ05FNVNFNF10MmdJK1VtZURlT2BJS2tCJHNfUlRQNylybkVKVzM8TUclalswLDZMJy8zblNCMk5SN0xwRFcvSDhIRl0sLUtLJSJvUTlUamorIlZJN0NqM1xDJUY/Kk9GP1FAQ2QwWXBKZGh1ZmtRXk5hJU1GSjBASV45XTFgLj1yKVYkOFNnNE0wJDE6ZUkoRkknMlRHUEoyTzEuTi1SXj02UEM+XCNZLzlsWTxwYnEyOUsiYEEpaVZPXlJrcTNQTGwtTGh0O0lJOzs1a1xNNls4KjZxKlUsJjRoJnBiUEVLaF44IygnPiw8bU4hL2o5L0hNPjxKbUowazJvTkAsQFU/c0VVPEZnPWNGMSRJIlUyUytnTXBTNGlZUUdcRzQxZCQySElxKXRbZSVDam01OyltJE5CZExGZU0jZiY2ZUtjZC1sL10rKCFHZ2A9YUxFSTBtaEI7VSdGaUZYYEtRWWRrL0tCbk0kMiRCajUkNUBCJENsJ0BvT1BSRS9cOXVjVzczYVljUC1PcmZSRl5nakpKKz1lT0B0KVpXJHVLPmolWGMxNGJoTmVTNFxBNzteYk1ATXBSPjVOJlkxbG1sdXQqQjpeJXMvL0RHYkFwJlQjMlBoJzI8M2hNUTA3S09ecCkjbWB1NzNQZTk5Q21ibSQ+XmhaYmNyMV1uMkNFKzxHUy5NbkM2YXRPa3FqPmB0aUdyLidVWW1GMTNbXClEYlRdbEVrayJuRnUhYDdJWGBUXy9rcGs3J0oqM2tVZUE5aVBlcmosZGNqdSo7X3FAR19PV2Q/WkYvdFIlR0tMQklaJjE4ZzEqZGpJOF1kZEooTChWLGlyW2w4Lzc5U3IzZls1SkxiVTZFaV0oamEyIWUhXSopM1JlNDpQcGVVcTtsP3Q+PFBQO2JOL1NYKDJYYTtBbkw4PHFXMGkpa1IkMGpuPyxhVj8jaHN1RzJQJlFiPCY+NytUVGtsal07W0dJQFtIO2tfPFZTYmQzOlViLWlZc0E7JUVHOExickAwN10lZT84SEc6aXVcc11FZ15TQWs5UDc0a3FocTpYUWpgXmhMU29TL144PFJAUjlwMnBKKDFIJ2dbbjZCJV07OlNyJicwVGdtKEdqOVZyJnU/KCZDOWslc1BDckEwQDQoRFV1ZUNSZz5wKSNQU01lITIzT3MjX15PVkE5R3A2RGhYXlhBQiFcRiYuRCpcJm8wM0VlXSdAXF9tSmknXUFBQC1FNGE4LDJZYT9nQz9FNTtOUzE7XCxqQTtbVi9UKC85WyMwUFslXjlNZVVYW0ZBPyhjclMpTHQ+Xj9hJj0ybyVPX0R1NHNSQnVYMCFIQiU2MmViYlRzRnVaQVIrTGlmYUhNXWdHUEBFWkJlNlxcQEdKY1NvKEtLdGBRbTJqM2ZMaSdpRzw7K1E7R3UoZFk0WWYjJFoqOWJVX2hKUilmKDZiLD0pQEBuNF1CZ1YlZGc/OjZddUNAbnJGaVAvOzNzOG1NRSY5dUBHLFkvIWZOJXNXW19BcTFWbydPP3MxUFpCNC1IUl5uUWk1OV9ma2lLKikyX3A3Si9OMC0pNkpJaERrbGVgWzI3aTRwZE9LKjJmZWZJYGZlY19IZkREOFk4M0xJYUQ+MzROM21tLGpPLj1sKTZZKS9vRURobzonRSZQUFpUN3VdJlY2KSNRJEdPZzREN3ImMlA4bjtqLUFLJGojVk9lM2lfLFVhbGElZj5OP01uSVRgZVg+bk9GOFBSOGE3ZVdUUV5DZFRcYGo5PkZAWz4/U1JCRkEtVjhKNGY9JkBDWWpLSEFaSG8wUjRGO0pGRG9qXDYlMmVvNFs9WklIclk+UlpbdC8rMzgkYGZgczFbJU5uLzFxYUozcT9qPzxZa0QoVydaI1JGWyhOQV8lU0xuLFZPW2xCQS1qR1NTTyVsXSQ4Lj9XXmxuOCI2I3UkODdyYikhRmIvZGI1bWI4dUhFMy5cSCowSF1aV15qS2lybDxBZ0QrYFwsLDRWdUJsQTZ0RmJdI0VrT0ZZayZNMjIqRW0kVCYnVFprRDgzYy0sIj9HLjU6QkswUEFpL2FwWlw7LkU0LyJGZ3MxQk1qaz1DRmErLSFPUEBSO0dacTsqdSZhNnEqXypxPyhPVkBnXjlcalI3IVJScjVJNyFuS1FUSDtiM2suUVpILXAlJDFVcy0xYVQ/OHF1RD4xO01OJVpDc2FuUlhPZFE0M2VTTGYrbk5BU09NUj80M15WZmRUOVgySCJOKlcvS0EzakdRJlJiZFJEN148WjtiYF1vdUw4Q1NUS1Amak9HZUgrYWZIXz5HTmNJVGZROC5TNltETDVGO2RFNigyYjBmOy9DKVxbU0srPyQsU3JyZWRdTjJJSjFQRVNsRV1ldGFOYnBfQD0oSiRKbEt1IyVkT15yNGBJRmBSMFVmL3ErRHBaOycsVyxQNkNILkomUkEmKjlTKHRPLlxCci5hWzYjZEpcQjdmVGolZG1GTy9hImRsKEpeNCxWJyNITm1dOyIpPGNsS2ZUVDxIW1phJlosMyNsTHJwPiYsblszWU5nLSlGKytBZ0BlUGlrWT4lIV5lV2tbKVlYR0tsO2BOa0JeIiNSXjcwc0RTXTtzMEtHZjo7JW5wSWhcQk5FRUkxYS45RlE9UipUUzxgT0hyLXVVZXJCZUJDW2lCYGokcmwiN2BoWyFqNTZOY3MlOjUzc3Ihb2hyYCEoLHAlV0IxRVZQNz91aXJbKHBVPEM+MTJIX3VKYSo9NVBTXXFkWTxKXCdjcXI3PlxKK2xnPUI8LEJIMztfXzFyZ1k8Ik06UGhSbDRdRDQ+dFhwIVo1Sz5tXzFsdSFWNSRpaTllYm1rM0puQyNicEhqdGEsSHJbZUQqO2pxPitRLk1ZIShUbk48bE5iIyloNWZOJm5TcmJxVT8iU11iK2UwLmYzWyNIMUA/XDs/U0xwaSlPYD0sXiZBM0ExYCtvOE8mYV8rRD1aXGY4OFZoXXApIU8ybCIwKX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMjIgMDAwMDAgbiAKMDAwMDAwMDIyOSAwMDAwMCBuIAowMDAwMDAwMzQxIDAwMDAwIG4gCjAwMDAwMDA0NTYgMDAwMDAgbiAKMDAwMDAwMDUzOSAwMDAwMCBuIAowMDAwMDAwNzQzIDAwMDAwIG4gCjAwMDAwMDA4MTEgMDAwMDAgbiAKMDAwMDAwMTA5OCAwMDAwMCBuIAowMDAwMDAxMTU3IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDNkODk5ZTFmNDQ0NzIxYWZmM2ExMjEwZjA4NzgwNzVhPjwzZDg5OWUxZjQ0NDcyMWFmZjNhMTIxMGYwODc4MDc1YT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gOCAwIFIKL1Jvb3QgNyAwIFIKL1NpemUgMTEKPj4Kc3RhcnR4cmVmCjUzMDMKJSVFT0YK" download="Mohamed_Ezer_Resume.pdf" class="btn btn-outline">Resume ↓</a>
   </div>
 </section>
 
@@ -201,52 +204,101 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   <p class="sec-label reveal-left">Work</p>
   <h2 class="reveal">Projects</h2>
   <div class="divider reveal"></div>
+  
+  <!-- Agentic AI & LLMs -->
   <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">🤖</div><span class="proj-group-title">Agentic AI &amp; LLMs</span><span class="proj-group-count">5 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/INSAT-RAG-assistant" target="_blank"><div class="proj-top"><p class="proj-name">INSAT RAG Assistant</p><span class="proj-arrow">↗</span></div><p class="proj-desc">AI-powered multilingual chatbot for INSAT. Built with LangChain, BM25 retrieval, Groq LLMs, Flask, and a Glassmorphism UI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RAG</span><span class="tag">LangChain</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/RLHF-worldcup-2026" target="_blank"><div class="proj-top"><p class="proj-name">RLHF World Cup 2026 🏆</p><span class="proj-arrow">↗</span></div><p class="proj-desc">FIFA World Cup 2026 AI chatbot using Llama 3.3 70B via Groq. Every response can be rated 👍/👎 and adapts through RLHF.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RLHF</span><span class="tag">Groq</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Reviewify" target="_blank"><div class="proj-top"><p class="proj-name">Reviewify</p><span class="proj-arrow">↗</span></div><p class="proj-desc">LLM-powered multi-tool agent for HR managers. Input bullet points → polished employee reviews.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">LLM Agent</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/student-advisor-ai" target="_blank"><div class="proj-top"><p class="proj-name">Student Advisor AI</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Interactive chatbot that guides students step-by-step, explains concepts, and assigns exercises.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Education AI</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/MatchPicker-AI-Dashboard" target="_blank"><div class="proj-top"><p class="proj-name">MatchPicker AI Dashboard</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Football dashboard with real-time match analysis, UCL stats, and custom-trained AI chatbot.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Sports AI</span><span class="tag">Flask</span></div></a>
+    
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/INSAT-RAG-assistant" target="_blank">
+      <div class="proj-image"><img src="k2.jfif" alt="INSAT RAG Assistant screenshot" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"><!-- Replace 'placeholder-insat.png' with your actual image file (e.g., image.png) --></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">INSAT RAG Assistant</p><span class="proj-arrow">↗</span></div><p class="proj-desc">AI-powered multilingual chatbot for INSAT. Built with LangChain, BM25 retrieval, Groq LLMs, Flask, and a Glassmorphism UI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RAG</span><span class="tag">LangChain</span></div></div>
+    </a>
+    
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/RLHF-worldcup-2026" target="_blank">
+      <div class="proj-image"><img src="k1.jfif" alt="RLHF World Cup 2026 screenshot" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">RLHF World Cup 2026 🏆</p><span class="proj-arrow">↗</span></div><p class="proj-desc">FIFA World Cup 2026 AI chatbot using Llama 3.3 70B via Groq. Every response can be rated 👍/👎 and adapts through RLHF.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">RLHF</span><span class="tag">Groq</span></div></div>
+    </a>
+    
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Reviewify" target="_blank">
+      <div class="proj-image"><img src="k13.jfif" alt="Reviewify screenshot" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Reviewify</p><span class="proj-arrow">↗</span></div><p class="proj-desc">LLM-powered multi-tool agent for HR managers. Input bullet points → polished employee reviews.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">LLM Agent</span></div></div>
+    </a>
+    
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/student-advisor-ai" target="_blank">
+      <div class="proj-image"><img src="k3.jfif" alt="Student Advisor AI screenshot" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Student Advisor AI</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Interactive chatbot that guides students step-by-step, explains concepts, and assigns exercises.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Education AI</span></div></div>
+    </a>
+    
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/MatchPicker-AI-Dashboard" target="_blank">
+      <div class="proj-image"><img src="k4.jfif" alt="MatchPicker Dashboard screenshot" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">MatchPicker AI Dashboard</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Football dashboard with real-time match analysis, UCL stats, and custom-trained AI chatbot.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Sports AI</span><span class="tag">Flask</span></div></div>
+    </a>
   </div></div>
 
+  <!-- Computer Vision -->
   <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">👁️</div><span class="proj-group-title">Computer Vision</span><span class="proj-group-count">3 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/YOLOv8-CarCounter" target="_blank"><div class="proj-top"><p class="proj-name">YOLOv8 Car Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Lightweight car detection using Ultralytics YOLOv8. Detect, count, and visualize cars with bounding boxes.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Detection</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Push-Up-Counter-using-MediaPipe-Adaline" target="_blank"><div class="proj-top"><p class="proj-name">Push-Up Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Counts push-ups in video using an Adaline model and body joint angles via MediaPipe.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">MediaPipe</span><span class="tag">Pose</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Soccer-Team-Detection" target="_blank"><div class="proj-top"><p class="proj-name">Soccer Team Detection</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Detects and classifies football players into Blue/White teams using YOLOv8, analyzes jersey color.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Classification</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/YOLOv8-CarCounter" target="_blank">
+      <div class="proj-image"><img src="k10.jpg" alt="YOLOv8 Car Counter" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">YOLOv8 Car Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Lightweight car detection using Ultralytics YOLOv8. Detect, count, and visualize cars with bounding boxes.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Detection</span></div></div>
+    </a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Push-Up-Counter-using-MediaPipe-Adaline" target="_blank">
+      <div class="proj-image"><img src="k6.jfif" alt="Push-Up Counter" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Push-Up Counter</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Counts push-ups in video using an Adaline model and body joint angles via MediaPipe.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">MediaPipe</span><span class="tag">Pose</span></div></div>
+    </a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Soccer-Team-Detection" target="_blank">
+      <div class="proj-image"><img src="k7.jfif" alt="Soccer Team Detection" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Soccer Team Detection</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Detects and classifies football players into Blue/White teams using YOLOv8, analyzes jersey color.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">YOLOv8</span><span class="tag">Classification</span></div></div>
+    </a>
   </div></div>
 
+  <!-- Classical ML & Web projects (shortened for brevity, but fully functional) -->
   <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">📊</div><span class="proj-group-title">Classical ML</span><span class="proj-group-count">4 projects</span><div class="proj-group-line"></div></div><div class="projects-grid reveal-stagger">
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Lifestyle-Stability-Index-using-GridSearchCV" target="_blank"><div class="proj-top"><p class="proj-name">Lifestyle Stability Index</p><span class="proj-arrow">↗</span></div><p class="proj-desc">SVC with GridSearchCV classifies STABLE vs UNSTABLE routines from sleep, steps, screen time.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">GridSearchCV</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/GEO_Country_Guesser_Using_Decision_Tree" target="_blank"><div class="proj-top"><p class="proj-name">Geo Country Guesser</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Decision Tree game that guesses a country from 15 geographic/demographic features.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Decision Tree</span><span class="tag">Tkinter</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/SpamGuard--SVM-using-kernel-trick-" target="_blank"><div class="proj-top"><p class="proj-name">SpamGuard (SVM)</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Desktop spam detection using TF-IDF and SVM with kernel trick. Tkinter GUI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">NLP</span></div></a>
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/VehicleHealthPredictor" target="_blank"><div class="proj-top"><p class="proj-name">Vehicle Health Predictor</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Logistic Regression pipeline to classify cars as healthy/unhealthy from sensor data.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Logistic Reg.</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/Lifestyle-Stability-Index-using-GridSearchCV" target="_blank">
+      <div class="proj-image"><img src="k14.webp" alt="Lifestyle Stability Index" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Lifestyle Stability Index</p><span class="proj-arrow">↗</span></div><p class="proj-desc">SVC with GridSearchCV classifies STABLE vs UNSTABLE routines from sleep, steps, screen time.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">GridSearchCV</span></div></div>
+    </a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/GEO_Country_Guesser_Using_Decision_Tree" target="_blank">
+      <div class="proj-image"><img src="k11.png" alt="Geo Country Guesser" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Geo Country Guesser</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Decision Tree game that guesses a country from 15 geographic/demographic features.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Decision Tree</span><span class="tag">Tkinter</span></div></div>
+    </a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/SpamGuard--SVM-using-kernel-trick-" target="_blank">
+      <div class="proj-image"><img src="k8.jfif" alt="SpamGuard" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">SpamGuard (SVM)</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Desktop spam detection using TF-IDF and SVM with kernel trick. Tkinter GUI.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">SVM</span><span class="tag">NLP</span></div></div>
+    </a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/VehicleHealthPredictor" target="_blank">
+      <div class="proj-image"><img src="k12.jfif" alt="Vehicle Health Predictor" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Vehicle Health Predictor</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Logistic Regression pipeline to classify cars as healthy/unhealthy from sensor data.</p><div class="proj-foot"><span><span class="lang-dot ld-py"></span>Python</span><span class="tag">Logistic Reg.</span></div></div>
+    </a>
   </div></div>
 
   <div class="proj-group reveal"><div class="proj-group-header"><div class="proj-group-icon">🌐</div><span class="proj-group-title">Full-Stack &amp; Web</span><span class="proj-group-count">1 project</span><div class="proj-group-line"></div></div><div class="projects-grid">
-    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/mathematicians-legacy" target="_blank"><div class="proj-top"><p class="proj-name">Mathematicians Legacy</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Full-stack platform: interactive map of mathematicians powered by Symfony, AI chatbot with Gemini &amp; Flask.</p><div class="proj-foot"><span><span class="lang-dot ld-php"></span>PHP / Python</span><span class="tag">Symfony</span><span class="tag">Gemini</span></div></a>
+    <a class="proj-card" href="https://github.com/mohamedezerbouzouraa/mathematicians-legacy" target="_blank">
+      <div class="proj-image"><img src="k9.jfif" alt="Mathematicians Legacy" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20130%22%3E%3Crect%20width%3D%22300%22%20height%3D%22130%22%20fill%3D%22%2322222e%22%2F%3E%3C%2Fsvg%3E';"></div>
+      <div class="proj-content"><div class="proj-top"><p class="proj-name">Mathematicians Legacy</p><span class="proj-arrow">↗</span></div><p class="proj-desc">Full-stack platform: interactive map of mathematicians powered by Symfony, AI chatbot with Gemini &amp; Flask.</p><div class="proj-foot"><span><span class="lang-dot ld-php"></span>PHP / Python</span><span class="tag">Symfony</span><span class="tag">Gemini</span></div></div>
+    </a>
   </div></div>
   <div class="reveal" style="text-align:center;margin-top:2rem"><a href="https://github.com/mohamedezerbouzouraa" target="_blank" class="btn btn-outline">View all on GitHub ↗</a></div>
 </section>
 
-<!-- BLOGS -->
+<!-- BLOGS (with the new Prime Numbers blog) -->
 <section id="blogs" class="page">
   <p class="sec-label reveal-left">Writing</p>
   <h2 class="reveal">Blogs</h2>
   <div class="divider reveal"></div>
   <div class="reveal">
     <a href="https://mohamedezerbouzouraa.github.io/math-blog/" target="_blank" class="blog-card">
-      <div class="blog-card-left">
-        <div class="blog-ico">∑</div>
-      </div>
+      <div class="blog-card-left"><div class="blog-ico">∑</div></div>
       <div class="blog-card-body">
         <p class="blog-title">Maths Blog</p>
         <p class="blog-desc">Exploring proofs, number theory, logic, and fascinating mathematical ideas.</p>
-        <div class="blog-foot">
-          <span class="tag">Proofs</span>
-          <span class="tag">Number Theory</span>
-          <span class="tag">Logic</span>
-          <span class="blog-link">mohamedezerbouzouraa.github.io/math-blog ↗</span>
-        </div>
+        <div class="blog-foot"><span class="tag">Proofs</span><span class="tag">Number Theory</span><span class="tag">Logic</span><span class="blog-link">mohamedezerbouzouraa.github.io/math-blog ↗</span></div>
+      </div>
+    </a>
+    <a href="https://mohamedezerbouzouraa.github.io/prime_numbers/" target="_blank" class="blog-card" style="margin-top: 1rem;">
+      <div class="blog-card-left"><div class="blog-ico">π</div></div>
+      <div class="blog-card-body">
+        <p class="blog-title">Prime Numbers: Theory &amp; Algorithms</p>
+        <p class="blog-desc">Explore prime distribution, primality testing, sieving algorithms, and open problems like Riemann Hypothesis.</p>
+        <div class="blog-foot"><span class="tag">Prime Numbers</span><span class="tag">Sieve of Eratosthenes</span><span class="tag">Primality Tests</span><span class="blog-link">mohamedezerbouzouraa.github.io/prime_numbers/ ↗</span></div>
       </div>
     </a>
   </div>
@@ -280,134 +332,21 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 <footer><p>© 2026 Mohamed Ezer Bouzouraa · Tunis, Tunisia</p></footer>
 
 <script>
-window.addEventListener('load', () => {
-  document.getElementById('hero').classList.add('hero-ready');
-});
-
+window.addEventListener('load', () => { document.getElementById('hero').classList.add('hero-ready'); });
 const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-stagger');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    } else {
-      entry.target.classList.remove('visible');
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); else entry.target.classList.remove('visible'); }); }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 revealElements.forEach(el => observer.observe(el));
-
-const btn = document.getElementById('themeBtn');
-const html = document.documentElement;
-btn.addEventListener('click', () => {
-  const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', newTheme);
-  btn.textContent = newTheme === 'dark' ? '🌙' : '☀️';
-  localStorage.setItem('theme', newTheme);
-});
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-  html.setAttribute('data-theme', savedTheme);
-  btn.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
-} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-  html.setAttribute('data-theme', 'light');
-  btn.textContent = '☀️';
-}
-
-const canvas = document.getElementById('bokeh-canvas');
-const ctx = canvas.getContext('2d');
-let W, H, stars = [], nebulaSeeds = [];
-
-function makeStar() {
-  const roll = Math.random();
-  const tier = roll < 0.90 ? 0 : roll < 0.98 ? 1 : 2;
-  const radii = [0.4, 0.85, 1.5];
-  const glows = [0, 1.5, 4.0];
-  let cr = 210, cg = 220, cb = 255;
-  const tint = Math.random();
-  if (tint < 0.12) { cr = 180; cg = 210; cb = 255; }
-  if (tint < 0.04) { cr = 255; cg = 240; cb = 210; }
-  return {
-    x: Math.random() * W, y: Math.random() * H,
-    vx: (Math.random() - 0.5) * 0.06, vy: (Math.random() - 0.5) * 0.04,
-    r: radii[tier], glow: glows[tier], tier, cr, cg, cb,
-    twinkleSpeed: Math.random() * 1.2 + 0.3, twinklePhase: Math.random() * Math.PI * 2,
-    alphaBase: tier === 0 ? (Math.random() * 0.5 + 0.25) : tier === 1 ? (Math.random() * 0.35 + 0.55) : (Math.random() * 0.25 + 0.70),
-    t: Math.random() * 100,
-  };
-}
-function makeNebulaSeed() {
-  const hues = [[60,40,120],[30,20,90],[20,50,110],[40,25,100]];
-  const c = hues[Math.floor(Math.random() * hues.length)];
-  return {
-    x: Math.random() * W, y: Math.random() * H,
-    rx: Math.random() * 280 + 120, ry: Math.random() * 160 + 80,
-    rot: Math.random() * Math.PI, alpha: Math.random() * 0.055 + 0.012,
-    cr: c[0], cg: c[1], cb: c[2],
-  };
-}
-function initScene() {
-  stars = []; nebulaSeeds = [];
-  const starCount = Math.floor((W * H) / 3500);
-  for (let i = 0; i < starCount; i++) stars.push(makeStar());
-  const nebCount = Math.floor((W * H) / 180000) + 3;
-  for (let i = 0; i < nebCount; i++) nebulaSeeds.push(makeNebulaSeed());
-}
-function resizeCanvas() {
-  W = canvas.width = window.innerWidth;
-  H = canvas.height = window.innerHeight;
-  initScene();
-}
-function drawDarkMode() {
-  if (html.getAttribute('data-theme') === 'light') return;
-  ctx.fillStyle = '#080810';
-  ctx.fillRect(0, 0, W, H);
-  nebulaSeeds.forEach(n => {
-    ctx.save();
-    ctx.translate(n.x, n.y);
-    ctx.rotate(n.rot);
-    ctx.scale(1, n.ry / n.rx);
-    const grad = ctx.createRadialGradient(0, 0, 0, 0, 0, n.rx);
-    grad.addColorStop(0, `rgba(${n.cr},${n.cg},${n.cb},${n.alpha})`);
-    grad.addColorStop(0.5, `rgba(${n.cr},${n.cg},${n.cb},${n.alpha * 0.4})`);
-    grad.addColorStop(1, `rgba(${n.cr},${n.cg},${n.cb},0)`);
-    ctx.beginPath();
-    ctx.arc(0, 0, n.rx, 0, Math.PI * 2);
-    ctx.fillStyle = grad;
-    ctx.fill();
-    ctx.restore();
-  });
-  stars.forEach(s => {
-    s.t += 0.016;
-    s.x += s.vx; s.y += s.vy;
-    if (s.x < -2) s.x = W + 2;
-    if (s.x > W+2) s.x = -2;
-    if (s.y < -2) s.y = H + 2;
-    if (s.y > H+2) s.y = -2;
-    const twinkle = 0.82 + 0.18 * Math.sin(s.t * s.twinkleSpeed + s.twinklePhase);
-    const alpha = s.alphaBase * twinkle;
-    if (s.glow > 0) {
-      const grad = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r + s.glow);
-      grad.addColorStop(0, `rgba(${s.cr},${s.cg},${s.cb},${alpha * 0.55})`);
-      grad.addColorStop(0.4, `rgba(${s.cr},${s.cg},${s.cb},${alpha * 0.18})`);
-      grad.addColorStop(1, `rgba(${s.cr},${s.cg},${s.cb},0)`);
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r + s.glow, 0, Math.PI * 2);
-      ctx.fillStyle = grad;
-      ctx.fill();
-    }
-    ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-    ctx.fillStyle = `rgba(${s.cr},${s.cg},${s.cb},${alpha})`;
-    ctx.fill();
-  });
-}
-function animate() {
-  drawDarkMode();
-  requestAnimationFrame(animate);
-}
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-animate();
+const btn = document.getElementById('themeBtn'); const html = document.documentElement;
+btn.addEventListener('click', () => { const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; html.setAttribute('data-theme', newTheme); btn.textContent = newTheme === 'dark' ? '🌙' : '☀️'; localStorage.setItem('theme', newTheme); });
+const savedTheme = localStorage.getItem('theme'); if(savedTheme) { html.setAttribute('data-theme', savedTheme); btn.textContent = savedTheme === 'dark' ? '🌙' : '☀️'; } else if(window.matchMedia('(prefers-color-scheme: light)').matches) { html.setAttribute('data-theme', 'light'); btn.textContent = '☀️'; }
+const canvas = document.getElementById('bokeh-canvas'); const ctx = canvas.getContext('2d'); let W, H, stars = [], nebulaSeeds = [];
+function makeStar() { const roll = Math.random(); const tier = roll < 0.90 ? 0 : roll < 0.98 ? 1 : 2; const radii = [0.4,0.85,1.5]; const glows = [0,1.5,4.0]; let cr=210,cg=220,cb=255; const tint=Math.random(); if(tint<0.12){cr=180;cg=210;cb=255;} if(tint<0.04){cr=255;cg=240;cb=210;} return { x:Math.random()*W, y:Math.random()*H, vx:(Math.random()-0.5)*0.06, vy:(Math.random()-0.5)*0.04, r:radii[tier], glow:glows[tier], tier, cr,cg,cb, twinkleSpeed:Math.random()*1.2+0.3, twinklePhase:Math.random()*Math.PI*2, alphaBase:tier===0?(Math.random()*0.5+0.25):tier===1?(Math.random()*0.35+0.55):(Math.random()*0.25+0.70), t:Math.random()*100 }; }
+function makeNebulaSeed() { const hues=[[60,40,120],[30,20,90],[20,50,110],[40,25,100]]; const c=hues[Math.floor(Math.random()*hues.length)]; return { x:Math.random()*W, y:Math.random()*H, rx:Math.random()*280+120, ry:Math.random()*160+80, rot:Math.random()*Math.PI, alpha:Math.random()*0.055+0.012, cr:c[0], cg:c[1], cb:c[2] }; }
+function initScene() { stars=[]; nebulaSeeds=[]; const starCount=Math.floor((W*H)/3500); for(let i=0;i<starCount;i++) stars.push(makeStar()); const nebCount=Math.floor((W*H)/180000)+3; for(let i=0;i<nebCount;i++) nebulaSeeds.push(makeNebulaSeed()); }
+function resizeCanvas() { W=canvas.width=window.innerWidth; H=canvas.height=window.innerHeight; initScene(); }
+function drawDarkMode() { if(html.getAttribute('data-theme')==='light') return; ctx.fillStyle='#080810'; ctx.fillRect(0,0,W,H); nebulaSeeds.forEach(n=>{ ctx.save(); ctx.translate(n.x,n.y); ctx.rotate(n.rot); ctx.scale(1,n.ry/n.rx); const grad=ctx.createRadialGradient(0,0,0,0,0,n.rx); grad.addColorStop(0,`rgba(${n.cr},${n.cg},${n.cb},${n.alpha})`); grad.addColorStop(0.5,`rgba(${n.cr},${n.cg},${n.cb},${n.alpha*0.4})`); grad.addColorStop(1,`rgba(${n.cr},${n.cg},${n.cb},0)`); ctx.beginPath(); ctx.arc(0,0,n.rx,0,Math.PI*2); ctx.fillStyle=grad; ctx.fill(); ctx.restore(); }); stars.forEach(s=>{ s.t+=0.016; s.x+=s.vx; s.y+=s.vy; if(s.x<-2) s.x=W+2; if(s.x>W+2) s.x=-2; if(s.y<-2) s.y=H+2; if(s.y>H+2) s.y=-2; const twinkle=0.82+0.18*Math.sin(s.t*s.twinkleSpeed+s.twinklePhase); const alpha=s.alphaBase*twinkle; if(s.glow>0){ const grad=ctx.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r+s.glow); grad.addColorStop(0,`rgba(${s.cr},${s.cg},${s.cb},${alpha*0.55})`); grad.addColorStop(0.4,`rgba(${s.cr},${s.cg},${s.cb},${alpha*0.18})`); grad.addColorStop(1,`rgba(${s.cr},${s.cg},${s.cb},0)`); ctx.beginPath(); ctx.arc(s.x,s.y,s.r+s.glow,0,Math.PI*2); ctx.fillStyle=grad; ctx.fill(); } ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fillStyle=`rgba(${s.cr},${s.cg},${s.cb},${alpha})`; ctx.fill(); }); }
+function animate() { drawDarkMode(); requestAnimationFrame(animate); }
+resizeCanvas(); window.addEventListener('resize', resizeCanvas); animate();
 </script>
 </body>
 </html>
