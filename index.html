@@ -332,7 +332,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 <footer><p>© 2026 Mohamed Ezer Bouzouraa · Tunis, Tunisia</p></footer>
 
 <script>
-window.addEventListener('load', () => { document.getElementById('hero').classList.add('hero-ready'); });
+document.addEventListener('DOMContentLoaded', () => { document.getElementById('hero').classList.add('hero-ready'); });
 const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-stagger');
 const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('visible'); else entry.target.classList.remove('visible'); }); }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 revealElements.forEach(el => observer.observe(el));
